@@ -1,0 +1,93 @@
+
+.row-header{
+  margin:0px auto;
+  padding:0px auto;
+  background-position: center;
+
+}
+
+.row-content {
+  margin:0px auto;
+  padding: 50px 0px 50px 0px;
+  border-bottom: 1px ridge;
+  min-height:200px;
+}
+
+.footer{
+  background-color: lightgray;
+  margin:0px auto;
+  padding: 20px 0px 20px 0px;
+  bottom: 0;
+  width: -webkit-fill-available;
+}
+
+.jumbotron {
+  padding:70px 30px 70px 30px;
+  margin:0px auto;
+  background-color: white;
+  color: black;
+  background-position: center;
+}
+
+address{
+  font-size:80%;
+  margin:0px;
+  color:#0f0f0f;
+}
+
+.navbar-dark {
+  background-color: black;
+}
+
+.main{
+  background-image: url(/image/pizzaBackground.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 910px !important;
+  width: auto;
+}
+
+.m5{
+  margin: 5px;
+}
+
+.welcomefont {
+font-size: 40px;
+font-family: 'Futura';
+color: #fff;
+text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff0080, 0 0 30px #ff0080, 0 0 40px #ff0080, 0 0 55px #ff0080, 0 0 75px #ff0080;
+text-align: center;
+font-style: oblique;
+}
+
+.homecontent{
+  text-align: center;
+}
+
+.homepara{
+  font-size: 70px;
+  color: whitesmoke;
+  text-align: center;
+}
+
+.menuitem{
+  background-image: url(/image/menu3.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 1420px !important;
+  width: auto;
+}
+
+.contactinfo{
+  background-image: url(/image/contactus2.jpg); 
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 800px !important;
+}
+
+.containercart{
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 800px !important;
+}
