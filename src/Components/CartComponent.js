@@ -23,10 +23,7 @@ class Cart extends Component{
         this.setState({show: !this.state.show})
     }
 
-    handleCheckout(){
-        this.setState({isAvail: !this.state.isAvail})
-        alert("Your order has been placed. Thank you for ordering on pizza.com"+"Total Price: $" + {totalprice()});
-    }
+   
    
 
     render(){
@@ -57,6 +54,10 @@ class Cart extends Component{
             products.forEach(item =>total = total + item.quantity * item.price);
             return total;
         }
+        handleCheckout(){
+            this.setState({isAvail: !this.state.isAvail})
+            alert("Your order has been placed. Thank you for ordering on pizza.com. Total price: $"+ {totalprice()});
+        }
 
        
       //  let addModalClose = ()=> this.setState({addModalShow: false});
@@ -81,6 +82,7 @@ class Cart extends Component{
                     <button className="btn btn-outline-dark" onClick={()=>this.handleModal()}>Add Address</button><br></br>
                     <button className="btn btn-success" onClick={()=>this.handleCheckout()}>Confirm Order</button>
                 </div>
+                
                 <Modal show={this.state.show}>
                     <Modal.Header>
                         <Modal.Title id="contained-modal-title-vcenter">
@@ -109,7 +111,6 @@ class Cart extends Component{
                         <Button variant="danger" onClick={()=>this.handleModal()}>Save</Button>
                     </Modal.Footer>
                 </Modal>
-                
                 <Modal isAvail={this.state.isAvail}>
                     <Modal.Header>
                         <Modal.Title>
@@ -123,6 +124,7 @@ class Cart extends Component{
                         <Button variant="success" onClick={() => this.handleCheckout()}>Checkout</Button>
                     </Modal.Footer>
                 </Modal>
+                
 
                
                 
