@@ -1,5 +1,5 @@
 import React,{Component} from "react";
-import {Breadcrumb, BreadcrumbItem, Label, Input} from 'reactstrap';
+import {Breadcrumb, BreadcrumbItem, Label, Input, Button} from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { connect } from 'react-redux';
 import { Jumbotorn } from 'reactstrap';
@@ -14,7 +14,8 @@ class Cart extends Component{
     constructor(props){
         super(props);
         this.state={
-            show: false
+            show: false,
+            isAvail: false
         };
         
     }
@@ -22,6 +23,10 @@ class Cart extends Component{
         this.setState({show: !this.state.show})
     }
 
+    handleCheckout(){
+        this.setState({isAvail: !this.state.isAvail})
+        alert("Your order has been placed. Thank you for ordering on pizza.com");
+    }
    
 
     render(){
@@ -73,7 +78,8 @@ class Cart extends Component{
                 </div>
                 <div className="totalprice" style={{textAlign:"center"}}><h3>Total Price: ${totalprice()}</h3>
                 
-                    <button className="btn btn-success" onClick={()=>this.handleModal()}>Add Address</button>
+                    <button className="btn btn-outline-dark" onClick={()=>this.handleModal()}>Add Address</button>
+                    <button className="btn btn-success" >Confirm Order</button>
                 </div>
                 <Modal show={this.state.show}>
                     <Modal.Header>
@@ -98,13 +104,25 @@ class Cart extends Component{
                             <Label htmlFor="mobile number">Mobile Number</Label>
                             <Input type="number" placeholder="10-digit mobile number*" name="mobilenumber" id="mobilenumber" />
                         </div>    
-                        
-
                     </Modal.Body>
                     <Modal.Footer>
                         <Button variant="danger" onClick={()=>this.handleModal()}>Save</Button>
                     </Modal.Footer>
                 </Modal>
+
+                    <Modal isAvail={this.state.isAvail}>
+                        <Modal.Header>
+                            <Modal.Title>
+                                Your Order
+                            </Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>
+                        <h3>Total Price: ${totalprice()}</h3>
+                        </Modal.Body>
+                        <Modal.Footer>
+                            <Button variant="success" onClick={()=>this.handleCheckout()}>Checkout</Button>
+                        </Modal.Footer>
+                    </Modal>
                 
             </div>
         )
