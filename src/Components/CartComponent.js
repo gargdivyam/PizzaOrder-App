@@ -25,7 +25,7 @@ class Cart extends Component{
 
     handleCheckout(){
         this.setState({isAvail: !this.state.isAvail})
-        alert("Your order has been placed. Thank you for ordering on pizza.com");
+        alert("Your order has been placed. Thank you for ordering on pizza.com"+"Total Price: $" + {totalprice()});
     }
    
 
@@ -78,7 +78,7 @@ class Cart extends Component{
                 </div>
                 <div className="totalprice" style={{textAlign:"center"}}><h3>Total Price: ${totalprice()}</h3>
                 
-                    <button className="btn btn-outline-dark" onClick={()=>this.handleModal()}>Add Address</button>
+                    <button className="btn btn-outline-dark" onClick={()=>this.handleModal()}>Add Address</button><br></br>
                     <button className="btn btn-success" onClick={()=>this.handleCheckout()}>Confirm Order</button>
                 </div>
                 <Modal show={this.state.show}>
@@ -109,20 +109,22 @@ class Cart extends Component{
                         <Button variant="danger" onClick={()=>this.handleModal()}>Save</Button>
                     </Modal.Footer>
                 </Modal>
-
-                    <Modal isAvail={this.state.isAvail}>
-                        <Modal.Header>
-                            <Modal.Title>
-                                Your Order
-                            </Modal.Title>
-                        </Modal.Header>
-                        <Modal.Body>
+                
+                <Modal isAvail={this.state.isAvail}>
+                    <Modal.Header>
+                        <Modal.Title>
+                            Your Order
+                        </Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
                         <h3>Total Price: ${totalprice()}</h3>
-                        </Modal.Body>
-                        <Modal.Footer>
-                            <Button variant="success" onClick={()=>this.handleCheckout()}>Checkout</Button>
-                        </Modal.Footer>
-                    </Modal>
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <Button variant="success" onClick={() => this.handleCheckout()}>Checkout</Button>
+                    </Modal.Footer>
+                </Modal>
+
+               
                 
             </div>
         )
