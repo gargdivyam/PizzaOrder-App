@@ -16,7 +16,7 @@ class Cart extends Component{
         this.state={
             show: false
         };
-        this.toggleModal = this.toggleModal.bind(this);
+        
     }
     handleModal(){
         this.setState({show: !this.state.show})
