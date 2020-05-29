@@ -84,26 +84,19 @@ class Cart extends Component{
                     <Modal.Body>
                         <div className="contaier">
                             <Label htmlFor="pincode">Pincode</Label>
-                            <Input type="number" placeholder="Pincode" name="pincode" id="pincode" 
-                            innerRef={(input)=>this.pincode=input}/>
+                            <Input type="number" placeholder="Pincode" name="pincode" id="pincode" />
                             <Label htmlFor="House No.">House No./Building name</Label>
-                            <Input type="text" placeholder="House No., Building name*" name="houseno" id="houseno"
-                            innerRef={(input)=>this.houseno=input}/>
+                            <Input type="text" placeholder="House No., Building name*" name="houseno" id="houseno" />
                             <Label htmlFor="Road name">Road Name, Area Colony</Label>
-                            <Input type="text" placeholder="Road Name, Area Colony*" name="area" id="area"
-                            innerRef={(input)=>this.area=input}/>
+                            <Input type="text" placeholder="Road Name, Area Colony*" name="area" id="area" />
                             <Label htmlFor="City">City</Label>
-                            <Input type="search" placeholder="City" name="city" id="city"
-                            innerRef={(input)=>this.city=input}/>
+                            <Input type="search" placeholder="City" name="city" id="city" />
                             <Label htmlFor="State">State</Label>
-                            <Input type="search" placeholder="State" name="citystate" id="citystate"
-                            innerRef={(input)=>this.citystate=input}/>
+                            <Input type="search" placeholder="State" name="citystate" id="citystate" />
                             <Label htmlFor="Name">Name</Label>
-                            <Input type="text" placeholder="Name" name="name" id="name"
-                            innerRef={(input)=>this.name=input}/>
+                            <Input type="text" placeholder="Name" name="name" id="name"/>
                             <Label htmlFor="mobile number">Mobile Number</Label>
-                            <Input type="number" placeholder="10-digit mobile number*" name="mobilenumber" id="mobilenumber" 
-                            innerRef={(input)=>this.mobilenumber=input}/>
+                            <Input type="number" placeholder="10-digit mobile number*" name="mobilenumber" id="mobilenumber" />
                         </div>    
                         
 
