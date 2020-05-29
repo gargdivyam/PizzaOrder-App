@@ -1,5 +1,5 @@
 import React,{Component} from "react";
-import {Breadcrumb, BreadcrumbItem} from 'reactstrap';
+import {Breadcrumb, BreadcrumbItem, Label, Input} from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { connect } from 'react-redux';
 import { Jumbotorn } from 'reactstrap';
@@ -71,7 +71,7 @@ class Cart extends Component{
                 </div>
                 <div className="totalprice" style={{textAlign:"center"}}><h3>Total Price: ${totalprice()}</h3>
                 
-                    <button className="btn btn-success" onClick={()=>this.handleModal()}>Confirm order</button>
+                    <button className="btn btn-success" onClick={()=>this.handleModal()}>Add Address</button>
                 </div>
                 <Modal show={this.state.show}>
                     <Modal.Header>
@@ -81,13 +81,20 @@ class Cart extends Component{
                     </Modal.Header>
                     <Modal.Body>
                         <div className="container">
-                            <input type="number" placeholder="Pincode" />
-                            <input type="text" placeholder="House No., Building name*" />
-                            <input type="text" placeholder="Road Name, Area Colony*" />
-                            <input type="search" placeholder="City*" />
-                            <input type="text" placeholder="State*" />
-                            <input type="text" placeholder="Name*" />
-                            <input type="number" placeholder=" 10-digit mobile number*" />
+                            <Label htmlFor="pincode">Pincode</Label>
+                            <Input type="number" placeholder="Pincode" name="pincode" id="pincode" />
+                            <Label htmlFor="House No.">House No./Building name</Label>
+                            <Input type="text" placeholder="House No., Building name*" name="house no" />
+                            <Label htmlFor="Road name">Road Name, Area Colony</Label>
+                            <Input type="text" placeholder="Road Name, Area Colony*" name="area" />
+                            <Label htmlFor="City">City</Label>
+                            <Input type="search" placeholder="City" name="city" />
+                            <Label htmlFor="State">State</Label>
+                            <Input type="search" placeholder="State" name="state" />
+                            <Label htmlFor="Name">Name</Label>
+                            <Input type="text" placeholder="Name" name="name" />
+                            <Label htmlFor="mobile number">Mobile Number</Label>
+                            <Input type="number" placeholder="10-digit mobile number*" name="mobile number" id="mobile number" />
                             
                         </div>
 
