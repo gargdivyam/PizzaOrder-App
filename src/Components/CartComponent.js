@@ -15,12 +15,20 @@ class Cart extends Component{
         super(props);
         this.state={
             show: false
-        }
+        };
+        this.toggleModal = this.toggleModal.bind(this);
+        this.handleAddress = this.handleAddress.bind(this);
     }
     handleModal(){
         this.setState({show: !this.state.show})
     }
 
+    handleAddress(event){
+        this.handleModal();
+        alert("Pincode: "+ this.pincode.value + "House No."+ this.houseno.value+ "Area: "+ this.area.value+
+        "city: "+this.city.value + "State: " + this.citystate.value + "Name: " + this.name.value + "Mobile No: " + this.mobilenumber.value );
+
+    }
 
     render(){
         const {products, addQuantity, subtractQuantity, emptyCart} = this.props;
@@ -80,23 +88,30 @@ class Cart extends Component{
                         </Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <div className="container">
+                        <Form onSubmit={this.handleAddress}>
                             <Label htmlFor="pincode">Pincode</Label>
-                            <Input type="number" placeholder="Pincode" name="pincode" id="pincode" />
+                            <Input type="number" placeholder="Pincode" name="pincode" id="pincode" 
+                            innerRef={(input)=>this.pincode=input}/>
                             <Label htmlFor="House No.">House No./Building name</Label>
-                            <Input type="text" placeholder="House No., Building name*" name="house no" />
+                            <Input type="text" placeholder="House No., Building name*" name="houseno" id="houseno"
+                            innerRef={(input)=>this.houseno=input}/>
                             <Label htmlFor="Road name">Road Name, Area Colony</Label>
-                            <Input type="text" placeholder="Road Name, Area Colony*" name="area" />
+                            <Input type="text" placeholder="Road Name, Area Colony*" name="area" id="area"
+                            innerRef={(input)=>this.area=input}/>
                             <Label htmlFor="City">City</Label>
-                            <Input type="search" placeholder="City" name="city" />
+                            <Input type="search" placeholder="City" name="city" id="city"
+                            innerRef={(input)=>this.city=input}/>
                             <Label htmlFor="State">State</Label>
-                            <Input type="search" placeholder="State" name="state" />
+                            <Input type="search" placeholder="State" name="citystate" id="citystate"
+                            innerRef={(input)=>this.citystate=input}/>
                             <Label htmlFor="Name">Name</Label>
-                            <Input type="text" placeholder="Name" name="name" />
+                            <Input type="text" placeholder="Name" name="name" id="name"
+                            innerRef={(input)=>this.name=input}/>
                             <Label htmlFor="mobile number">Mobile Number</Label>
-                            <Input type="number" placeholder="10-digit mobile number*" name="mobile number" id="mobile number" />
+                            <Input type="number" placeholder="10-digit mobile number*" name="mobilenumber" id="mobilenumber" 
+                            innerRef={(input)=>this.mobilenumber=input}/>
                             
-                        </div>
+                        </Form>
 
                     </Modal.Body>
                     <Modal.Footer>
