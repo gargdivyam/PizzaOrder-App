@@ -1,5 +1,5 @@
 import React,{Component} from "react";
-import {Breadcrumb, BreadcrumbItem, Label, Input, Form} from 'reactstrap';
+import {Breadcrumb, BreadcrumbItem, Label, Input} from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { connect } from 'react-redux';
 import { Jumbotorn } from 'reactstrap';
@@ -17,18 +17,12 @@ class Cart extends Component{
             show: false
         };
         this.toggleModal = this.toggleModal.bind(this);
-        this.handleAddress = this.handleAddress.bind(this);
     }
     handleModal(){
         this.setState({show: !this.state.show})
     }
 
-    handleAddress(event){
-        this.handleModal();
-        alert("Pincode: "+ this.pincode.value + "House No."+ this.houseno.value+ "Area: "+ this.area.value+
-        "city: "+this.city.value + "State: " + this.citystate.value + "Name: " + this.name.value + "Mobile No: " + this.mobilenumber.value );
-
-    }
+   
 
     render(){
         const {products, addQuantity, subtractQuantity, emptyCart} = this.props;
@@ -88,7 +82,7 @@ class Cart extends Component{
                         </Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <Form onSubmit={this.handleAddress}>
+                        <div className="contaier">
                             <Label htmlFor="pincode">Pincode</Label>
                             <Input type="number" placeholder="Pincode" name="pincode" id="pincode" 
                             innerRef={(input)=>this.pincode=input}/>
@@ -110,8 +104,8 @@ class Cart extends Component{
                             <Label htmlFor="mobile number">Mobile Number</Label>
                             <Input type="number" placeholder="10-digit mobile number*" name="mobilenumber" id="mobilenumber" 
                             innerRef={(input)=>this.mobilenumber=input}/>
-                            
-                        </Form>
+                        </div>    
+                        
 
                     </Modal.Body>
                     <Modal.Footer>
