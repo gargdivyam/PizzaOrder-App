@@ -1,13 +1,12 @@
 import React,{Component} from "react";
-import {Breadcrumb, BreadcrumbItem, Label, Input, Modal, ModalBody, ModalHeader, ModalFooter} from 'reactstrap';
+import {Breadcrumb, BreadcrumbItem, Label, Input, Modal, ModalBody, ModalHeader, ModalFooter, Button} from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { connect } from 'react-redux';
 import { Jumbotorn } from 'reactstrap';
 import { Link } from "react-router-dom";
 import { addQuantity , subtractQuantity, emptyCart, removeFromCart } from "../Actions/action";
 import { Card } from 'reactstrap';
-//import { TextField } from '@material-ui/core';
-import {Modal, Button} from 'react-bootstrap';
+
 
 class Cart extends Component{
 
