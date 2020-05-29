@@ -1,5 +1,5 @@
 import React,{Component} from "react";
-import {Breadcrumb, BreadcrumbItem, Label, Input} from 'reactstrap';
+import {Breadcrumb, BreadcrumbItem, Label, Input, Modal, ModalBody, ModalHeader, ModalFooter} from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { connect } from 'react-redux';
 import { Jumbotorn } from 'reactstrap';
@@ -23,7 +23,10 @@ class Cart extends Component{
         this.setState({show: !this.state.show})
     }
 
-   
+    handleCheckout(){
+        this.setState({isAvail: !this.state.isAvail})
+        alert("Your order has been placed. Thank you for ordering on pizza.com");
+    }
    
 
     render(){
@@ -54,10 +57,7 @@ class Cart extends Component{
             products.forEach(item =>total = total + item.quantity * item.price);
             return total;
         }
-        handleCheckout(){
-            this.setState({isAvail: !this.state.isAvail})
-            alert("Your order has been placed. Thank you for ordering on pizza.com. Total price: $"+ {totalprice()});
-        }
+        
 
        
       //  let addModalClose = ()=> this.setState({addModalShow: false});
@@ -84,12 +84,10 @@ class Cart extends Component{
                 </div>
                 
                 <Modal show={this.state.show}>
-                    <Modal.Header>
-                        <Modal.Title id="contained-modal-title-vcenter">
+                    <ModalHeader>
                             Add Address
-                        </Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
+                    </ModalHeader>
+                    <ModalBody>
                         <div className="contaier">
                             <Label htmlFor="pincode">Pincode</Label>
                             <Input type="number" placeholder="Pincode" name="pincode" id="pincode" />
@@ -106,23 +104,21 @@ class Cart extends Component{
                             <Label htmlFor="mobile number">Mobile Number</Label>
                             <Input type="number" placeholder="10-digit mobile number*" name="mobilenumber" id="mobilenumber" />
                         </div>    
-                    </Modal.Body>
-                    <Modal.Footer>
+                    </ModalBody>
+                    <ModalFooter>
                         <Button variant="danger" onClick={()=>this.handleModal()}>Save</Button>
-                    </Modal.Footer>
+                    </ModalFooter>
                 </Modal>
                 <Modal isAvail={this.state.isAvail}>
-                    <Modal.Header>
-                        <Modal.Title>
+                    <ModalHeader>
                             Your Order
-                        </Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
+                    </ModalHeader>
+                    <ModalBody>
                         <h3>Total Price: ${totalprice()}</h3>
-                    </Modal.Body>
-                    <Modal.Footer>
+                    </ModalBody>
+                    <ModalFooter>
                         <Button variant="success" onClick={() => this.handleCheckout()}>Checkout</Button>
-                    </Modal.Footer>
+                    </ModalFooter>
                 </Modal>
                 
 
