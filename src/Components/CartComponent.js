@@ -85,9 +85,11 @@ class Cart extends Component{
                 <div className="totalprice" style={{textAlign:"center"}}><h3>Total Price: ${totalprice()}</h3>
                 </div>
                 <div style={{textAlign:"center"}}>
+                    <h3><b>Proide Your Address</b></h3><br></br>
                 <Button className="bg-primary" onClick={this.handleModal}>Add Address</Button>
                 </div>
                 <div style={{textAlign:"center"}}>
+                    <h3><b>Confirm Your Order</b></h3><br></br>
                 <Link to="/confirm" className="btn btn-success" onClick={()=>emptyCart()}>Confirm Order</Link>
                 </div>
                 
