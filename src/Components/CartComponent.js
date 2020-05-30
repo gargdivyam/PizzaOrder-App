@@ -24,7 +24,7 @@ class Cart extends Component{
 
     handleCheckout(){
         this.setState({isAvail: !this.state.isAvail})
-        alert("Your order has been placed. Thank you for ordering on pizza.com");
+        alert("Your order has been confirmed. Thank you for ordering on pizza.com");
     }
    
 
@@ -78,8 +78,12 @@ class Cart extends Component{
                 </div>
                 <div className="totalprice" style={{textAlign:"center"}}><h3>Total Price: ${totalprice()}</h3>
                 
-                    <button className="btn btn-outline-dark" onClick={()=>this.handleModal()}>Add Address</button><br></br>
-                    <button className="btn btn-success" onClick={()=>this.handleCheckout()}>Confirm Order</button>
+                </div>
+                <div>
+                <button className="btn btn-outline-dark" onClick={()=>this.handleModal()}>Add Address</button>
+                </div>
+                <div>
+                <button className="btn btn-success" onClick={()=>this.handleCheckout()}>Confirm Order</button>
                 </div>
                 
                 <Modal show={this.state.show}>
