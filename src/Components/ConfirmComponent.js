@@ -9,7 +9,9 @@ class Confirm extends Component{
         super(props);
         this.state = {
             Avail: false
-        }
+        };
+        this.handleFeedbackModal = this.handleFeedbackModal.bind(this);
+        this.handleFeedBack = this.handleFeedBack.bind(this);
     }
 
     handleFeedbackModal(){
@@ -39,6 +41,8 @@ class Confirm extends Component{
                     <div style={{textAlign:"center"}}>
                         <h2 className="welcomefont">Your order is confirmed. Thank you for ordering on Pizza.com</h2>
                         <h3 className="welcomefont">Please provide Feedback</h3>
+                    </div>
+                    <div style={{textAlign:"center"}}>
                         <Button className="bg-primary" onClick={this.handleFeedbackModal}>Feedback</Button>
                     </div>
                     

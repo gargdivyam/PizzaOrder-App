@@ -17,7 +17,6 @@ class Cart extends Component{
             show: false
         };
         this.handleModal = this.handleModal.bind(this);
-       // this.handleCheckout = this.handleCheckout.bind(this);
         this.handleAddress = this.handleAddress.bind(this);
         
     }
@@ -26,11 +25,6 @@ class Cart extends Component{
             show: !this.state.show
         });
     }
-
-    // handleCheckout(){
-    //     this.setState({isAvail: !this.state.isAvail})
-    //     alert("Your order has been confirmed. Thank you for ordering on pizza.com");
-    // }
 
     handleAddress(event){
         this.handleModal();
