@@ -92,10 +92,10 @@ class Cart extends Component{
                 
                 </div>
                 <div style={{textAlign:"center"}}>
-                <button className="btn btn-outline-dark" onClick={()=>this.handleModal()}>Add Address</button>
+                <Button className="btn btn-outline-dark" onClick={this.handleModal}>Add Address</Button>
                 </div>
                 <div style={{textAlign:"center"}}>
-                <button className="btn btn-success" onClick={()=>this.handleCheckout()}>Confirm Order</button>
+                <Button className="btn btn-success" onClick={()=>this.handleCheckout()}>Confirm Order</Button>
                 </div>
                 
                 <Modal show={this.state.show} toggle={this.handleModal}>
