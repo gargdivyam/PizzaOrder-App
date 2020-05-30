@@ -108,17 +108,7 @@ class Cart extends Component{
                         <Button variant="danger" onClick={()=>this.handleModal()}>Save</Button>
                     </ModalFooter>
                 </Modal>
-                <Modal isAvail={this.state.isAvail}>
-                    <ModalHeader>
-                            Your Order
-                    </ModalHeader>
-                    <ModalBody>
-                        <h3>Total Price: ${totalprice()}</h3>
-                    </ModalBody>
-                    <ModalFooter>
-                        <Button variant="success" onClick={() => this.handleCheckout()}>Checkout</Button>
-                    </ModalFooter>
-                </Modal>
+                
                 
 
                
