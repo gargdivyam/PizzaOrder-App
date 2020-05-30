@@ -6,6 +6,7 @@ import { Jumbotorn } from 'reactstrap';
 import { Link } from "react-router-dom";
 import { addQuantity , subtractQuantity, emptyCart, removeFromCart } from "../Actions/action";
 import { Card } from 'reactstrap';
+import Confirm from "./ConfirmComponent";
 
 
 class Cart extends Component{
@@ -13,11 +14,10 @@ class Cart extends Component{
     constructor(props){
         super(props);
         this.state={
-            show: false,
-            isAvail: false
+            show: false
         };
         this.handleModal = this.handleModal.bind(this);
-        this.handleCheckout = this.handleCheckout.bind(this);
+       // this.handleCheckout = this.handleCheckout.bind(this);
         this.handleAddress = this.handleAddress.bind(this);
         
     }
@@ -27,10 +27,10 @@ class Cart extends Component{
         });
     }
 
-    handleCheckout(){
-        this.setState({isAvail: !this.state.isAvail})
-        alert("Your order has been confirmed. Thank you for ordering on pizza.com");
-    }
+    // handleCheckout(){
+    //     this.setState({isAvail: !this.state.isAvail})
+    //     alert("Your order has been confirmed. Thank you for ordering on pizza.com");
+    // }
 
     handleAddress(event){
         this.handleModal();
@@ -91,10 +91,10 @@ class Cart extends Component{
                 <div className="totalprice" style={{textAlign:"center"}}><h3>Total Price: ${totalprice()}</h3>
                 </div>
                 <div style={{textAlign:"center"}}>
-                <Button outline className="bg-primary" onClick={this.handleModal}>Add Address</Button>
+                <Button className="bg-primary" onClick={this.handleModal}>Add Address</Button>
                 </div>
                 <div style={{textAlign:"center"}}>
-                <Button outline className="bg-success" onClick={this.handleCheckout}>Confirm Order</Button>
+                <Link to="/confirm" className="btn btn-success" onClick={()=>emptyCart()}>Confirm Order</Link>
                 </div>
                 
                 <Modal isOpen={this.state.show} toggle={this.handleModal}>

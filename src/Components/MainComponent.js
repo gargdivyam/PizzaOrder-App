@@ -6,6 +6,7 @@ import Home from "./HomeComponent";
 import Menu from "./MenuComponent";
 import Contact from "./ContactComponent";
 import Cart from "./CartComponent";
+import Confirm from "./ConfirmComponent";
 
 class Main extends Component{
 
@@ -30,6 +31,7 @@ class Main extends Component{
                     <Route path="/menu" component={Menu} />
                     <Route exact path="/contactus" component={Contact} />
                     <Route path="/cart" component={Cart} />
+                    <Route path="/confirm" component={Confirm} />
                     <Redirect to="/home" />
                 </Switch>
                 <Footer />
