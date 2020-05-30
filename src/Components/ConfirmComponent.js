@@ -3,7 +3,7 @@ import { Breadcrumb, BreadcrumbItem } from "reactstrap";
 import { Link } from "react-router-dom";
 
 
-export class Confrim extends Component{
+class Confirm extends Component{
     render(){
         return(
             <div className="confirmed">
@@ -21,3 +21,4 @@ export class Confrim extends Component{
         );
     }
 }
+export default Confirm;
