@@ -34,8 +34,8 @@ class Cart extends Component{
 
     handleAddress(event){
         this.handleModal();
-        alert("Pincode: " + this.pincode.value + "House No: "+ this.houseno.value + "Area:"+ this.area.value+ "city: "+this.city.value+
-        "State: "+this.citystate.value+ "Name: "+this.name.value+ "Mobile No: "+this.mobilenumber.value);
+        alert("Pincode: " + this.pincode.value + "House No: " + this.houseno.value + "Area: "+ this.area.value+ "city: "+ this.city.value +
+        "State: "+ this.citystate.value + "Name: " + this.name.value + "Mobile No: " + this.mobilenumber.value);
         event.preventDefault();
     }
    
@@ -91,10 +91,10 @@ class Cart extends Component{
                 <div className="totalprice" style={{textAlign:"center"}}><h3>Total Price: ${totalprice()}</h3>
                 </div>
                 <div style={{textAlign:"center"}}>
-                <Button outline onClick={this.handleModal}>Add Address</Button>
+                <Button outline className="bg-primary" onClick={this.handleModal}>Add Address</Button>
                 </div>
                 <div style={{textAlign:"center"}}>
-                <Button outline onClick={this.handleCheckout}>Confirm Order</Button>
+                <Button outline className="bg-success" onClick={this.handleCheckout}>Confirm Order</Button>
                 </div>
                 
                 <Modal isOpen={this.state.show} toggle={this.handleModal}>
