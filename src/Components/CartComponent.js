@@ -89,16 +89,15 @@ class Cart extends Component{
                         <button className="btn btn-outline-danger" onClick={()=>emptyCart()}>Delete</button>
                 </div>
                 <div className="totalprice" style={{textAlign:"center"}}><h3>Total Price: ${totalprice()}</h3>
-                
                 </div>
                 <div style={{textAlign:"center"}}>
-                <Button className="btn btn-outline-dark" onClick={this.handleModal}>Add Address</Button>
+                <Button outline onClick={this.handleModal}>Add Address</Button>
                 </div>
                 <div style={{textAlign:"center"}}>
-                <Button className="btn btn-success" onClick={()=>this.handleCheckout()}>Confirm Order</Button>
+                <Button outline onClick={this.handleCheckout}>Confirm Order</Button>
                 </div>
                 
-                <Modal show={this.state.show} toggle={this.handleModal}>
+                <Modal isOpen={this.state.show} toggle={this.handleModal}>
                     <ModalHeader toggle={this.handleModal}>
                             Add Address
                     </ModalHeader>
@@ -139,13 +138,10 @@ class Cart extends Component{
                             <Input type="number" placeholder="10-digit mobile number*" name="mobilenumber" id="mobilenumber" 
                             innerRef={(input)=>this.mobilenumber=input}/>
                             </FormGroup>
-                            
+                            <Button type="submit" value="submit" className="bg-danger">Save</Button>
                         </Form>    
                     </ModalBody>
-                    <ModalFooter>
-                        <Button type="submit" value="submit" className="bg-danger">Save</Button>
-                    </ModalFooter>
-                </Modal>
+                     </Modal>
                 
                 
 
