@@ -8,6 +8,6 @@
 * -: It is used to decrease the quantity of particulart item from cart.
 * +: It is used to increase the quantity of particulart item from cart
 * Delete: It is used to remove the items from the cart.
-* Add Address: It opens up a form where ypu can enter you address and contact number
+* Add Address: It opens up a form where you can enter your address and contact number
 * Confirm Order: This button will let your order confirm by asking for the customer details such as address and mobile number.
 * Feedback: This button will let you submit your feedback.
