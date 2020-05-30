@@ -1,5 +1,5 @@
 import React,{Component} from "react";
-import {Breadcrumb, BreadcrumbItem, Label, Input, Modal, ModalBody, ModalHeader, ModalFooter, Button} from 'reactstrap';
+import {Breadcrumb, BreadcrumbItem, Label, Input, Modal, ModalBody, ModalHeader, ModalFooter, Button, Form, FormGroup} from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { connect } from 'react-redux';
 import { Jumbotorn } from 'reactstrap';
@@ -18,15 +18,25 @@ class Cart extends Component{
         };
         this.handleModal = this.handleModal.bind(this);
         this.handleCheckout = this.handleCheckout.bind(this);
+        this.handleAddress = this.handleAddress.bind(this);
         
     }
     handleModal(){
-        this.setState({show: !this.state.show})
+        this.setState({
+            show: !this.state.show
+        });
     }
 
     handleCheckout(){
         this.setState({isAvail: !this.state.isAvail})
         alert("Your order has been confirmed. Thank you for ordering on pizza.com");
+    }
+
+    handleAddress(event){
+        this.handleModal();
+        alert("Pincode: " + this.pincode.value + "House No: "+ this.houseno.value + "Area:"+ this.area.value+ "city: "+this.city.value+
+        "State: "+this.citystate.value+ "Name: "+this.name.value+ "Mobile No: "+this.mobilenumber.value);
+        event.preventDefault();
     }
    
 
@@ -88,30 +98,52 @@ class Cart extends Component{
                 <button className="btn btn-success" onClick={()=>this.handleCheckout()}>Confirm Order</button>
                 </div>
                 
-                <Modal show={this.state.show}>
-                    <ModalHeader>
+                <Modal show={this.state.show} toggle={this.handleModal}>
+                    <ModalHeader toggle={this.handleModal}>
                             Add Address
                     </ModalHeader>
                     <ModalBody>
-                        <div className="contaier">
+                        <Form onSubmit={this.handleAddress}>
+                            <FormGroup>
                             <Label htmlFor="pincode">Pincode</Label>
-                            <Input type="number" placeholder="Pincode" name="pincode" id="pincode" />
-                            <Label htmlFor="House No.">House No./Building name</Label>
-                            <Input type="text" placeholder="House No., Building name*" name="houseno" id="houseno" />
-                            <Label htmlFor="Road name">Road Name, Area Colony</Label>
-                            <Input type="text" placeholder="Road Name, Area Colony*" name="area" id="area" />
-                            <Label htmlFor="City">City</Label>
-                            <Input type="search" placeholder="City" name="city" id="city" />
-                            <Label htmlFor="State">State</Label>
-                            <Input type="search" placeholder="State" name="citystate" id="citystate" />
-                            <Label htmlFor="Name">Name</Label>
-                            <Input type="text" placeholder="Name" name="name" id="name"/>
-                            <Label htmlFor="mobile number">Mobile Number</Label>
-                            <Input type="number" placeholder="10-digit mobile number*" name="mobilenumber" id="mobilenumber" />
-                        </div>    
+                            <Input type="number" placeholder="Pincode" name="pincode" id="pincode" 
+                            innerRef={(input)=>this.pincode=input}/>
+                            </FormGroup>
+                            <FormGroup>
+                            <Label htmlFor="houseno">House No./Building name</Label>
+                            <Input type="text" placeholder="House No., Building name*" name="houseno" id="houseno" 
+                            innerRef={(input)=>this.houseno=input}/>
+                            </FormGroup>
+                            <FormGroup>
+                            <Label htmlFor="area">Road Name, Area Colony</Label>
+                            <Input type="text" placeholder="Road Name, Area Colony*" name="area" id="area" 
+                            innerRef={(input)=>this.area=input}/>
+                            </FormGroup>
+                           <FormGroup>
+                           <Label htmlFor="city">City</Label>
+                            <Input type="search" placeholder="City" name="city" id="city" 
+                            innerRef={(input)=>this.city=input}/>
+                           </FormGroup>
+                            <FormGroup>
+                            <Label htmlFor="citystate">State</Label>
+                            <Input type="search" placeholder="State" name="citystate" id="citystate" 
+                            innerRef={(input)=>this.citystate=input}/>
+                            </FormGroup>
+                            <FormGroup>
+                            <Label htmlFor="name">Name</Label>
+                            <Input type="text" placeholder="Name" name="name" id="name"
+                            innerRef={(input)=>this.name=input}/>
+                            </FormGroup>
+                            <FormGroup>
+                            <Label htmlFor="mobilenumber">Mobile Number</Label>
+                            <Input type="number" placeholder="10-digit mobile number*" name="mobilenumber" id="mobilenumber" 
+                            innerRef={(input)=>this.mobilenumber=input}/>
+                            </FormGroup>
+                            
+                        </Form>    
                     </ModalBody>
                     <ModalFooter>
-                        <Button variant="danger" onClick={()=>this.handleModal()}>Save</Button>
+                        <Button type="submit" value="submit" className="bg-danger">Save</Button>
                     </ModalFooter>
                 </Modal>
                 
