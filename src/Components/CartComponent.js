@@ -16,6 +16,8 @@ class Cart extends Component{
             show: false,
             isAvail: false
         };
+        this.handleModal = this.handleModal.bind(this);
+        this.handleCheckout = this.handleCheckout.bind(this);
         
     }
     handleModal(){
@@ -79,10 +81,10 @@ class Cart extends Component{
                 <div className="totalprice" style={{textAlign:"center"}}><h3>Total Price: ${totalprice()}</h3>
                 
                 </div>
-                <div>
+                <div style={{textAlign:"center"}}>
                 <button className="btn btn-outline-dark" onClick={()=>this.handleModal()}>Add Address</button>
                 </div>
-                <div>
+                <div style={{textAlign:"center"}}>
                 <button className="btn btn-success" onClick={()=>this.handleCheckout()}>Confirm Order</button>
                 </div>
                 
